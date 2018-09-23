@@ -14,6 +14,11 @@ import (
 )
 
 func main() {
+	if len(os.Args) != 2 {
+		fmt.Printf("USAGE: %s [URL]\n", os.Args[0])
+		os.Exit(1)
+	}
+
 	site := os.Args[1]
 	if err := download(site); err != nil {
 		panic(err)
